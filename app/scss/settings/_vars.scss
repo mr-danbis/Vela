@@ -1,0 +1,88 @@
+$maxWidth: 1920;
+$minWidth: 320;
+
+$mainColor: rgb(0, 72, 206);
+
+@mixin adaptive-font($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    font-size: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-width($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    width: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-height($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    height: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-padding($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    padding: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-paddingRight($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    padding-right: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-paddingLeft($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    padding-left: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-paddingTop($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    padding-top: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-paddingBottom($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    padding-bottom: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-margin($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    margin: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-marginRight($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    margin-right: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-marginLeft($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    margin-left: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-marginTop($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    margin-top: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-marginBottom($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    margin-bottom: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptive-gridGap($pcValue, $mobValue) {
+    $addSize: $pcValue - $mobValue;
+    $differenceWidth: $maxWidth - $minWidth;
+    grid-gap: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
