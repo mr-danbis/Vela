@@ -1,14 +1,8 @@
-//example
-
-// @font-face {
-//   font-family: 'HelveticaLight';
-//   src: url('/fonts/HelveticaLight.woff') format('woff');
-//   font-weight: 300;
-//   font-style: normal;
-// }
-// @font-face {
-//   font-family: 'HelveticaLight';
-//   src: url('/fonts/HelveticaLight.woff2') format('woff2');
-//   font-weight: 300;
-//   font-style: normal;
-// }
+@font-face {
+    font-family: 'Maza';
+    src:
+        url('../fonts/Maza.woff') format('woff'),
+        url('../fonts/Maza.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+}
