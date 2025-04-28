@@ -2,6 +2,7 @@ $maxWidth: 1440;
 $minWidth: 360;
 
 $mainColor: #4888FF;
+$textColor: rgb(52, 58, 63);
 
 @mixin adaptive-font($pcValue, $mobValue) {
     $addSize: $pcValue - $mobValue;
