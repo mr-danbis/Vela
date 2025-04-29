@@ -4,23 +4,31 @@
     top: 0;
     left: 0;
     right: 0;
-    
-    &--scroll{
+
+    &--scroll {
         position: fixed;
-        .header{
-            &__top, &__box-bottom, &__router-btn{
+
+        .header {
+
+            &__top,
+            &__box-bottom,
+            &__router-btn {
                 opacity: 0;
                 display: none;
             }
-            &__box-top, &__router-top{
+
+            &__box-top,
+            &__router-top {
                 margin-bottom: 0;
             }
-            &__main{
+
+            &__main {
                 align-items: center;
                 padding-top: 9px;
                 padding-bottom: 11px;
             }
-            &__languages{
+
+            &__languages {
                 margin-top: 0;
             }
         }
@@ -135,7 +143,8 @@
     }
 
     &__box {
-        width: 48%;
+        width: 950px;
+
         &-top {
             transition: all .3s;
             margin-bottom: 16px;
@@ -143,7 +152,8 @@
             align-items: stretch;
             justify-content: space-between;
         }
-        &-bottom{
+
+        &-bottom {
             transition: all .3s;
         }
     }
@@ -162,6 +172,27 @@
 
             rect {
                 fill: $mainColor;
+            }
+        }
+
+        &--mobile{
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            background-color: $mainColor;
+            border: 1px solid $mainColor;
+            border-radius: 8px;
+            transition: all .3s;
+            margin-right: 16px;
+
+            &:hover {
+                background-color: transparent;
+
+                rect {
+                    fill: $mainColor;
+                }
             }
         }
 
@@ -188,6 +219,9 @@
         }
 
         &-btn {
+            svg{
+                display: none;
+            }
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -254,10 +288,6 @@
         display: flex;
         align-items: center;
 
-        &:not(:last-child) {
-            margin-right: 18.51px;
-        }
-
         &-title {
             margin-left: 10px;
             color: rgb(52, 58, 63);
@@ -285,6 +315,10 @@
         margin-top: 13.5px;
         display: flex;
         align-items: center;
+
+        &.header__languages--mobile {
+            display: none;
+        }
 
         &-btn {
             color: rgb(52, 58, 63);
@@ -379,12 +413,201 @@
             &:hover {
                 background: $mainColor;
 
-                span{
+                span {
                     color: #fff;
                 }
 
                 path {
                     stroke: #fff;
+                }
+            }
+        }
+    }
+
+    &__mobile {
+        &-left {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .header {
+        &__box {
+            width: 65%;
+        }
+    }
+}
+
+@media (max-width: 1380px) {
+    .header {
+        &__tiles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+        }
+    }
+}
+
+@media (max-width: 1120px) {
+    .header {
+        &__box {
+            width: 55%;
+        }
+
+        &__tiles {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .header {
+
+        &__worktime,
+        &__right,
+        &__location {
+            display: none;
+        }
+
+        &__languages {
+            &.header__languages--mobile {
+                display: flex;
+                margin-top: 0;
+            }
+
+            &.header__languages--desctop {
+                display: none;
+            }
+        }
+
+        &__left {
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &__router {
+            &-top {
+                margin-bottom: 0;
+            }
+
+            &-btn {
+                display: none;
+            }
+
+            &-link {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+
+        &__box {
+            margin-top: 16px;
+            order: 4;
+            width: 100%;
+            &-top {
+                margin-bottom: 0;
+                height: 46px;
+            }
+
+            &-bottom {
+                display: none;
+            }
+        }
+
+        &__social {
+            display: none;
+        }
+
+        &__btn {
+            display: none;
+
+            &-mobile{
+                display: flex;
+            }
+        }
+
+        &__search {
+            margin-right: 0;
+        }
+
+        &__main {
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        &__mobile {
+            &-left {
+                order: 1;
+                display: flex;
+            }
+        }
+
+        &__logo{
+            order: 2;
+        }
+
+        &__router{
+            order: 3;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .header{
+        &__logo{
+            width: 56px;
+            height: 56px;
+            padding: 15.2px;
+        }
+
+        &__router{
+            &-link{
+                width: 40px;
+                height: 40px;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:not(:last-child){
+                    margin-right: 6px;
+                }
+            }
+        }
+
+        &__btn{
+            &--mobile{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                width: 40px;
+                margin-right: 6px;
+            }
+        }
+
+        &__box{
+            margin-top: 10px;
+        }
+
+        &__top{
+            padding: 4px 0;
+        }
+
+        &__main{
+            padding-top: 10px;
+        }
+
+        &__search{
+            &-btn{
+                span{
+                    display: none;
+                }
+
+                svg{
+                    display: block;
                 }
             }
         }
