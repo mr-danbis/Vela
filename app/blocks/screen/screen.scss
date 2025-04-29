@@ -32,7 +32,7 @@
     &__btn {
         border-radius: 8px;
         background: rgb(255, 255, 255);
-        border:  1px solid transparent;
+        border: 1px solid transparent;
         padding: 14px 38px;
         color: rgb(103, 40, 112);
         font-size: 16px;
@@ -43,6 +43,45 @@
             background-color: transparent;
             border-color: rgb(255, 255, 255);
             color: rgb(255, 255, 255);
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .screen {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        background-position-x: 65%;
+    }
+}
+
+@media (max-width: 700px) {
+    .screen {
+        background-image: url(../images/scrren-mobile.png);
+        background-position-y: 20%;
+        padding-right: 50px;
+        padding-bottom: 186px;
+
+        &__wrapper {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .screen {
+        padding-top: 32px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-position-y: 0;
+
+        &__text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }
