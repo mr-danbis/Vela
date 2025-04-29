@@ -12,8 +12,6 @@ let changeMenuHeight = () => {
         });
     });
 }
-changeMenuHeight();
-
 
 let openAndCloseMenu = () => {
     let menu = document.querySelector('.menu');
@@ -35,4 +33,34 @@ let openAndCloseMenu = () => {
         event.stopPropagation();
     });
 }
-openAndCloseMenu()
+
+let changedHeaderByScroll = () => {
+    let header = document.querySelector('.header');
+    if (window.scrollY > 0) {
+        header.classList.add('header--scroll');
+    } else {
+        header.classList.remove('header--scroll');
+    }
+}
+
+let fixMenu = () => {
+    let menu = document.querySelector('.menu');
+    let header = document.querySelector('.header');
+
+    if (window.scrollY > 0) {
+        menu.style.top = `${header.clientHeight}px`;
+    } else {
+        menu.style.top = `${182}px`;
+    }
+
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', function () {
+        changedHeaderByScroll();
+        fixMenu();
+    });
+    
+    changeMenuHeight();
+    openAndCloseMenu();
+});
