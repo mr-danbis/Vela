@@ -180,7 +180,7 @@
             }
         }
 
-        &--mobile {
+        &-mobile {
             justify-content: center;
             align-items: center;
             width: 48px;
@@ -201,11 +201,11 @@
                 background-color: rgb(232, 232, 232) !important;
                 border-color: transparent;
 
-                .header__btn--mobile-open {
+                .header__btn-mobile-open {
                     display: block;
                 }
 
-                .header__btn--mobile-close {
+                .header__btn-mobile-close {
                     display: none;
                 }
             }

@@ -77,7 +77,7 @@ let openNewSidebarLevel = () => {
 
 let openCloseSidebar = () => {
     let sidebar = document.querySelector('.sidebar');
-    let btn = document.querySelector('.header__btn--mobile');
+    let btn = document.querySelector('.header__btn-mobile');
     let isSidebarVisible = false;
 
     btn.addEventListener('click', () => {
