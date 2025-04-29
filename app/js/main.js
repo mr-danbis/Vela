@@ -12,28 +12,6 @@ let changeMenuHeight = () => {
         });
     });
 }
-
-let openAndCloseMenu = () => {
-    let menu = document.querySelector('.menu');
-    let btn = document.querySelector('.header__btn');
-    let isMenuVisible = false;
-
-    btn.addEventListener('click', () => {
-        event.stopPropagation();
-        isMenuVisible = !isMenuVisible;
-        menu.style.display = isMenuVisible ? 'block' : 'none';
-    });
-
-    document.addEventListener('click', () => {
-        isMenuVisible = false;
-        menu.style.display = 'none';
-    });
-
-    menu.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
-}
-
 let changedHeaderByScroll = () => {
     let header = document.querySelector('.header');
     if (window.scrollY > 0) {
@@ -119,6 +97,27 @@ let settingSidebarHeight = () => {
     sidebar.style.height = `${100 - (header.clientHeight / window.innerHeight * 100)}vh`;
 }
 
+let openModal = (idTile, idMoodal) => {
+    let tile = document.getElementById(idTile);
+    let modal = document.getElementById(idMoodal);
+    let isMenuVisible = false;
+
+    tile.addEventListener('click', () => {
+        event.stopPropagation();
+        isMenuVisible = !isMenuVisible;
+        modal.style.display = isMenuVisible ? 'block' : 'none';
+    });
+
+    document.addEventListener('click', () => {
+        isMenuVisible = false;
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     settingSidebarHeight();
 
@@ -129,8 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     changeMenuHeight();
-    openAndCloseMenu();
     openSidebarLevel();
     openNewSidebarLevel();
     openCloseSidebar();
+    openModal('catalogBTN', 'catalog');
+    openModal('tileGiftsSets', 'giftsSets');
+    openModal('tileEvents', 'events');
 });

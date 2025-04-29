@@ -9,7 +9,47 @@
     padding-bottom: 22px;
     width: 338px;
     min-height: 352px;
-    display: none;
+
+    &#catalog{
+        display: none;
+    }
+
+    &#giftsSets{
+        display: none;
+    }
+
+    &#events{
+        width: 204px;
+        display: none;
+        min-height: unset;
+        padding: 24px;
+
+        .menu__item{
+            width: 100%;
+            border-bottom: unset;
+
+            &:not(:last-child){
+                margin-bottom: 16px;
+            }
+
+            &:hover{
+                background-color: unset;
+
+                .menu__item-title{
+                    color: $mainColor;
+                }
+            }
+        }
+
+        .menu__item-title{
+            margin-left: 0;
+            transition: all .3s;
+        }
+
+        .menu__item-link{
+            padding: 0;
+        }
+    }
 
     &:has(.menu__item--withList:hover) {
         width: 640px;
