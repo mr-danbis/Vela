@@ -95,9 +95,10 @@
     }
 
     &__worktime {
-        svg{
+        svg {
             display: none;
         }
+
         color: $textColor;
         font-size: 14px;
 
@@ -178,7 +179,7 @@
             }
         }
 
-        &--mobile{
+        &--mobile {
             justify-content: center;
             align-items: center;
             width: 48px;
@@ -190,20 +191,20 @@
             transition: all .3s;
             margin-right: 16px;
 
-            &-open{
+            &-open {
                 display: none;
             }
 
-            &.open{
+            &.open {
                 display: flex;
                 background-color: rgb(232, 232, 232) !important;
                 border-color: transparent;
 
-                .header__btn--mobile-open{
+                .header__btn--mobile-open {
                     display: block;
                 }
 
-                .header__btn--mobile-close{
+                .header__btn--mobile-close {
                     display: none;
                 }
             }
@@ -232,9 +233,10 @@
         }
 
         &-btn {
-            svg{
+            svg {
                 display: none;
             }
+
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -402,6 +404,26 @@
                     fill: $mainColor;
                 }
             }
+
+            &.header__router-link--counter {
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    top: -13px;
+                    right: -13px;
+                    content: '20';
+                    width: 26px;
+                    height: 26px;
+                    background-color: $mainColor;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: rgb(255, 255, 255);
+                    font-size: 13px;
+                }
+            }
         }
 
         &-btn {
@@ -519,6 +541,7 @@
             margin-top: 16px;
             order: 4;
             width: 100%;
+
             &-top {
                 margin-bottom: 0;
                 height: 46px;
@@ -536,7 +559,7 @@
         &__btn {
             display: none;
 
-            &-mobile{
+            &-mobile {
                 display: flex;
             }
         }
@@ -557,26 +580,26 @@
             }
         }
 
-        &__logo{
+        &__logo {
             order: 2;
         }
 
-        &__router{
+        &__router {
             order: 3;
         }
     }
 }
 
 @media (max-width: 400px) {
-    .header{
-        &__logo{
+    .header {
+        &__logo {
             width: 56px;
             height: 56px;
             padding: 15.2px;
         }
 
-        &__router{
-            &-link{
+        &__router {
+            &-link {
                 width: 40px;
                 height: 40px;
                 padding: 5px;
@@ -584,14 +607,26 @@
                 align-items: center;
                 justify-content: center;
 
-                &:not(:last-child){
+                &:not(:last-child) {
                     margin-right: 6px;
+                }
+
+                &.header__router-link--counter {
+                    position: relative;
+
+                    &::after {
+                        top: -10px;
+                        right: -10px;
+                        width: 20px;
+                        height: 20px;
+                        font-size: 12px;
+                    }
                 }
             }
         }
 
-        &__btn{
-            &--mobile{
+        &__btn {
+            &--mobile {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -601,36 +636,37 @@
             }
         }
 
-        &__box{
+        &__box {
             margin-top: 10px;
         }
 
-        &__top{
+        &__top {
             padding: 4px 0;
         }
 
-        &__main{
+        &__main {
             padding-top: 10px;
         }
 
-        &__search{
-            &-btn{
+        &__search {
+            &-btn {
                 width: 40px;
                 height: 40px;
                 padding: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                span{
+
+                span {
                     display: none;
                 }
 
-                svg{
+                svg {
                     display: block;
                 }
             }
 
-            &-input{
+            &-input {
                 padding: 4px 60px 4px 24px;
             }
         }
