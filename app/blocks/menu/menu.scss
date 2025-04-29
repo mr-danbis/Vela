@@ -1,0 +1,202 @@
+.menu {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(157, 157, 157, 0.35);
+    background: rgb(255, 255, 255);
+    padding-top: 30px;
+    padding-bottom: 22px;
+    width: 338px;
+    min-height: 352px;
+    display: none;
+
+    &:has(.menu__item--withList:hover) {
+        width: 640px;
+    }
+
+    &:has(.menu__subitem--withList:hover) {
+        width: 892px;
+    }
+
+    &__level {
+        &.level2 {
+            padding-left: 41px;
+            padding-right: 49px;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 330px;
+            min-height: 352px;
+        }
+
+        &.level3 {
+            padding-left: 40px;
+            display: none;
+            position: absolute;
+            top: 0;
+            right: -53%;
+        }
+    }
+
+    &__list {
+        position: relative;
+    }
+
+    &__item {
+        width: 338px;
+        transition: all .3s;
+
+        &-link {
+            padding: 13px 29px 13px 34.92px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        &-title {
+            margin-left: 20.92px;
+            color: rgb(52, 58, 63);
+            font-size: 16px;
+        }
+
+        &-icon {
+            path {
+                transition: all .3s;
+            }
+        }
+
+        &-arrow {
+            position: absolute;
+            right: 29px;
+
+            path {
+                transition: all .3s;
+            }
+        }
+
+        &:hover {
+            background: rgb(243, 243, 243);
+
+            .menu {
+                &__item {
+                    &-icon {
+                        path {
+                            fill-opacity: unset;
+                        }
+                    }
+
+                    &-arrow {
+                        path {
+                            stroke: #4888FF80;
+                        }
+                    }
+                }
+
+                &__level.level2 {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__title {
+        max-width: 200px;
+        color: $textColor;
+        font-family: Maza;
+        font-size: 30px;
+        margin-bottom: 31px;
+    }
+
+    &__subitem {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        &-title {
+            margin-right: 8px;
+            color: #343A3F;
+            font-size: 16px;
+            transition: all .3s;
+        }
+
+        &-count {
+            color: #343A3F80;
+            font-size: 14px;
+            transition: all .3s;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        &-arrow {
+            position: absolute;
+            right: 0;
+
+            path {
+                transition: all .3s;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            .menu {
+                &__subitem {
+
+                    &-title,
+                    &-count {
+                        color: $mainColor;
+                    }
+
+                    &-arrow {
+                        path {
+                            stroke: #4888FF80;
+                        }
+                    }
+                }
+
+                &__level.level3 {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__subsubitem {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        &-title {
+            margin-right: 8px;
+            color: #343A3F;
+            font-size: 16px;
+            transition: all .3s;
+        }
+
+        &-count {
+            color: #343A3F80;
+            font-size: 14px;
+            transition: all .3s;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            .menu {
+                &__subsubitem {
+
+                    &-title,
+                    &-count {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+
+}
