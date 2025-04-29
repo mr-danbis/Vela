@@ -66,7 +66,7 @@ function build() {
     'app/*.html',
     'app/css/*.css',
     "app/js/main.min.js",
-    'app/fonts/**/*',
+    // 'app/fonts/**/*',
   ], {base: 'app'})
     .pipe(dest('docs'));
 }
