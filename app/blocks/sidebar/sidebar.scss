@@ -2,11 +2,11 @@
     padding-top: 15px;
     background-color: #fff;
     position: fixed;
-    top: 200px;
+    bottom: 0;
     left: -150%;
     width: 100vw;
-    height: 78vh;
     overflow-y: scroll;
+    transition: all .3s;
 
     &__info {
         margin-bottom: 24px;
@@ -81,6 +81,7 @@
 
         &__tile {
             padding: 14px;
+            position: relative;
 
             rect {
                 transition: all .3s;
@@ -172,6 +173,10 @@
             border-radius: 6px;
             background: rgb(244, 244, 244);
             padding: 12px 17px;
+
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
         }
     }
 }

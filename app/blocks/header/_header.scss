@@ -190,11 +190,21 @@
             transition: all .3s;
             margin-right: 16px;
 
-            &:hover {
-                background-color: transparent;
+            &-open{
+                display: none;
+            }
 
-                rect {
-                    fill: $mainColor;
+            &.open{
+                display: flex;
+                background-color: rgb(232, 232, 232) !important;
+                border-color: transparent;
+
+                .header__btn--mobile-open{
+                    display: block;
+                }
+
+                .header__btn--mobile-close{
+                    display: none;
                 }
             }
         }

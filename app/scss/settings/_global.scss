@@ -4,6 +4,10 @@ body {
     color: #fff;
     font-family: Maza;
     overflow-y: scroll;
+
+    &:has(.sidebar.open){
+        overflow-y: hidden;
+    }
 }
 
 .wrapper {

@@ -18,7 +18,7 @@ let openAndCloseMenu = () => {
     let btn = document.querySelector('.header__btn');
     let isMenuVisible = false;
 
-    btn.addEventListener('click', ()=> {
+    btn.addEventListener('click', () => {
         event.stopPropagation();
         isMenuVisible = !isMenuVisible;
         menu.style.display = isMenuVisible ? 'block' : 'none';
@@ -65,8 +65,8 @@ let openSidebarLevel = () => {
         document.querySelector('.sidebar .header__right').style.display = 'none';
         document.querySelector('.sidebar__menu').style.display = 'block';
         document.querySelector('.sidebar__info').style.display = 'flex';
-
     })
+
 }
 
 let hideItems = (item) => {
@@ -74,7 +74,7 @@ let hideItems = (item) => {
     let sidebarMenuItems = sidebar.querySelectorAll('.menu__item');
 
     sidebarMenuItems.forEach(item => {
-        if (!item.classList.contains('clicked')){
+        if (!item.classList.contains('clicked')) {
             item.style.display = 'none';
         }
     });
@@ -89,19 +89,48 @@ let openNewSidebarLevel = () => {
             item.querySelector('.level2').style.display = 'block';
             item.classList.add('clicked');
             hideItems(item);
-            sidebar.querySelector('.sidebar__info-title').textContent = item.querySelector('menu__item-title').textContent;
+            sidebar.querySelector('.sidebar__info-title').textContent = item.querySelector('.menu__item-title').textContent;
         })
     });
 }
 
+let openCloseSidebar = () => {
+    let sidebar = document.querySelector('.sidebar');
+    let btn = document.querySelector('.header__btn--mobile');
+    let isSidebarVisible = false;
+
+    btn.addEventListener('click', () => {
+        isSidebarVisible = !isSidebarVisible;
+        sidebar.style.left = isSidebarVisible ? '0' : '-150%';
+        if (isSidebarVisible) {
+            btn.classList.add('open');
+            sidebar.classList.add('open');
+        } else {
+            btn.classList.remove('open');
+            sidebar.classList.remove('open');
+        }
+    });
+}
+
+let settingSidebarHeight = () => {
+    let sidebar = document.querySelector('.sidebar');
+    let header = document.querySelector('.header');
+
+    sidebar.style.height = `${100 - (header.clientHeight / window.innerHeight * 100)}vh`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    settingSidebarHeight();
+
     window.addEventListener('scroll', function () {
         changedHeaderByScroll();
         fixMenu();
+        settingSidebarHeight();
     });
 
     changeMenuHeight();
     openAndCloseMenu();
     openSidebarLevel();
     openNewSidebarLevel();
+    openCloseSidebar();
 });
