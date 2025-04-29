@@ -10,17 +10,12 @@
     width: 338px;
     min-height: 352px;
 
-    &#catalog{
-        display: none;
-    }
-
-    &#giftsSets{
+    &#catalog, &#giftsSets, &#events{
         display: none;
     }
 
     &#events{
         width: 204px;
-        display: none;
         min-height: unset;
         padding: 24px;
 

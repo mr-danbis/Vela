@@ -33,16 +33,19 @@ let fixMenu = () => {
 
 }
 
-let openSidebarLevel = () => {
-    let tile = document.querySelector('.header__tile--withList');
+let openSidebarLevel = (tileID, listID) => {
+    let sidebar = document.querySelector('.sidebar');
+    let tile = document.getElementById(tileID);
+    let list = document.getElementById(listID);
 
     tile.addEventListener('click', () => {
         document.querySelector('.sidebar__top').style.display = 'none';
         document.querySelector('.sidebar .header__tiles').style.display = 'none';
         document.querySelector('.sidebar .header__router-btn').style.display = 'none';
         document.querySelector('.sidebar .header__right').style.display = 'none';
-        document.querySelector('.sidebar__menu').style.display = 'block';
         document.querySelector('.sidebar__info').style.display = 'flex';
+        list.style.display = 'block';
+        sidebar.querySelector('.sidebar__info-title').textContent = tile.querySelector('.header__tile-title').textContent;
     })
 
 }
@@ -128,10 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     changeMenuHeight();
-    openSidebarLevel();
     openNewSidebarLevel();
     openCloseSidebar();
     openModal('catalogBTN', 'catalog');
     openModal('tileGiftsSets', 'giftsSets');
     openModal('tileEvents', 'events');
+    openSidebarLevel('tileCatalogBTN', 'sidebarMenuCatalog');
+    openSidebarLevel('tileGiftsSetsBTN', 'sidebarMenuGiftsSets');
+    openSidebarLevel('tileEventsBTN', 'sidebarMenuEvents');
 });

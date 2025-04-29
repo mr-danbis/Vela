@@ -37,7 +37,9 @@
     }
 
     &__menu {
-        display: none;
+        ul#sidebarMenuCatalog, ul#sidebarMenuGiftsSets, ul#sidebarMenuEvents{
+            display: none;
+        }
     }
 
     .header {
