@@ -1,0 +1,47 @@
+.screen {
+    padding-top: 83px;
+    padding-bottom: 84px;
+    padding-left: 100px;
+    background-image: url(../images/scrren.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__wrapper {
+        max-width: 50%;
+    }
+
+    &__title {
+        color: rgb(255, 255, 255);
+        font-family: Tenor Sans;
+        @include adaptive-font(32, 24);
+        font-weight: 400;
+        line-height: 36px;
+        margin-bottom: 26px;
+    }
+
+    &__text {
+        color: rgb(255, 255, 255);
+        font-family: Tenor Sans;
+        @include adaptive-font(18, 14);
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 26px;
+    }
+
+    &__btn {
+        border-radius: 8px;
+        background: rgb(255, 255, 255);
+        border:  1px solid transparent;
+        padding: 14px 38px;
+        color: rgb(103, 40, 112);
+        font-size: 16px;
+        line-height: 20px;
+        transition: all .3s;
+
+        &:hover {
+            background-color: transparent;
+            border-color: rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+        }
+    }
+}
