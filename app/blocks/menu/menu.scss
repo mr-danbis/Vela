@@ -236,3 +236,21 @@
     }
 
 }
+
+@media (max-width: 950px) {
+    .menu{
+        &__item{
+            border-bottom: unset;
+            
+            &:hover{
+                .menu{
+                    &__level{
+                        &.level2{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

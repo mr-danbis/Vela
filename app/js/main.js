@@ -50,8 +50,7 @@ let openSidebarLevel = (tileID, listID) => {
 
 }
 
-let hideItems = (item) => {
-    let sidebar = document.querySelector('.sidebar');
+let hideItems = (sidebar) => {
     let sidebarMenuItems = sidebar.querySelectorAll('.menu__item');
 
     sidebarMenuItems.forEach(item => {
@@ -69,7 +68,7 @@ let openNewSidebarLevel = () => {
         item.addEventListener('click', () => {
             item.querySelector('.level2').style.display = 'block';
             item.classList.add('clicked');
-            hideItems(item);
+            hideItems(sidebar);
             sidebar.querySelector('.sidebar__info-title').textContent = item.querySelector('.menu__item-title').textContent;
         })
     });
